@@ -14,7 +14,7 @@ class CreateAnnouncementTable extends Migration
     public function up()
     {
         Schema::create('announcement', function (Blueprint $table) {
-            $table->increments('ann_id');
+            $table->increments('id');
             $table->integer('u_id');
             $table->string('title',50);
             $table->text('content');

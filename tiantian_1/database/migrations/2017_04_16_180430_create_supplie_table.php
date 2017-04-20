@@ -14,7 +14,7 @@ class CreateSupplieTable extends Migration
     public function up()
     {
         Schema::create('supplie', function (Blueprint $table) {
-            $table->increments('s_id');
+            $table->increments('id');
             $table->string('name',20);
             $table->integer('quantity');
             $table->timestamps();

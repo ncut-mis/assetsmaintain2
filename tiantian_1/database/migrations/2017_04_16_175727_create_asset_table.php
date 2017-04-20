@@ -14,7 +14,7 @@ class CreateAssetTable extends Migration
     public function up()
     {
         Schema::create('asset', function (Blueprint $table) {
-            $table->increments('a_id');
+            $table->increments('id');
             $table->string('name',50);
             $table->integer('category');
             $table->date('date')->nullable();

@@ -14,7 +14,7 @@ class CreateUserPrevilegeTable extends Migration
     public function up()
     {
         Schema::create('userPrevilege', function (Blueprint $table) {
-            $table->increments('up_id');
+            $table->increments('id');
             $table->integer('u_id');
             $table->integer('p_id');
             $table->timestamps();
