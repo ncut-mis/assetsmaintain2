@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserPrevilegeTable extends Migration
+class CreateMaintainceitemTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,10 @@ class CreateUserPrevilegeTable extends Migration
      */
     public function up()
     {
-        Schema::create('userPrevilege', function (Blueprint $table) {
-            $table->increments('up_id');
-            $table->integer('u_id');
-            $table->integer('p_id');
+        Schema::create('maintainceitem', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name',20);
+            $table->integer('amount');
             $table->timestamps();
         });
     }
@@ -28,6 +28,6 @@ class CreateUserPrevilegeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('userPrevilege');
+        Schema::dropIfExists('maintainceitem');
     }
 }

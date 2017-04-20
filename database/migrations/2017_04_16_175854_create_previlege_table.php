@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateLendingTable extends Migration
+class CreatePrevilegeTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateLendingTable extends Migration
      */
     public function up()
     {
-        Schema::create('lending', function (Blueprint $table) {
-            $table->increments('l_id');
-            $table->integer('u_id');
-            $table->integer('a_id');
-            $table->dateTime('lenttime');
-            $table->dateTime('returntime')->nullable();
+        Schema::create('previlege', function (Blueprint $table) {
+            $table->increments('id');
+            $table->string('name',20);
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateLendingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lending');
+        Schema::dropIfExists('previlege');
     }
 }

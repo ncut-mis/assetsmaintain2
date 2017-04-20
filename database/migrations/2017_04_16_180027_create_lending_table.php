@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateMaintainceTable extends Migration
+class CreateLendingTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,12 @@ class CreateMaintainceTable extends Migration
      */
     public function up()
     {
-        Schema::create('maintaince', function (Blueprint $table) {
-            $table->increments('m_id');
+        Schema::create('lending', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('u_id');
             $table->integer('a_id');
-            $table->integer('v_id');
-            $table->integer('mitems_id');
-            $table->date('date');
-            $table->string('status',20);
-            $table->string('method',20);
-            $table->text('remark')->nullable();
+            $table->dateTime('lenttime');
+            $table->dateTime('returntime')->nullable();
             $table->timestamps();
         });
     }
@@ -33,6 +30,6 @@ class CreateMaintainceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maintaince');
+        Schema::dropIfExists('lending');
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateSupplieTable extends Migration
+class CreateApplicationTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,10 +13,12 @@ class CreateSupplieTable extends Migration
      */
     public function up()
     {
-        Schema::create('supplie', function (Blueprint $table) {
-            $table->increments('s_id');
-            $table->string('name',20);
-            $table->integer('quantity');
+        Schema::create('application', function (Blueprint $table) {
+            $table->increments('id');
+            $table->integer('u_id');
+            $table->integer('m_id');
+            $table->text('problem');
+            $table->date('date');
             $table->timestamps();
         });
     }
@@ -28,6 +30,6 @@ class CreateSupplieTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('supplie');
+        Schema::dropIfExists('application');
     }
 }
