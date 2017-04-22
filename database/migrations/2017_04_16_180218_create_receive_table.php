@@ -14,7 +14,7 @@ class CreateReceiveTable extends Migration
     public function up()
     {
         Schema::create('receives', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->index();
             $table->integer('u_id')->index();
             $table->integer('s_id')->index();
             $table->dateTime('datetime');

@@ -14,7 +14,7 @@ class CreateLendingTable extends Migration
     public function up()
     {
         Schema::create('lendings', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->index();
             $table->integer('u_id')->index();
             $table->integer('a_id')->index();
             $table->dateTime('lenttime');

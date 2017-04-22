@@ -14,7 +14,7 @@ class CreateMaintainceTable extends Migration
     public function up()
     {
         Schema::create('maintainces', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->index();
             $table->integer('a_id')->index();
             $table->integer('v_id')->index();
             $table->integer('mitems_id');

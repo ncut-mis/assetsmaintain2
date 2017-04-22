@@ -14,7 +14,7 @@ class CreateApplicationTable extends Migration
     public function up()
     {
         Schema::create('applications', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->index();
             $table->integer('u_id')->index();
             $table->integer('m_id')->index();
             $table->text('problem');
