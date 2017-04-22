@@ -14,7 +14,7 @@ class CreateMaintainceitemTable extends Migration
     public function up()
     {
         Schema::create('maintainceitems', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->index();
             $table->string('name',20);
             $table->integer('amount');
             $table->timestamps();

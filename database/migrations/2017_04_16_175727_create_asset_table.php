@@ -13,10 +13,10 @@ class CreateAssetTable extends Migration
      */
     public function up()
     {
-        Schema::create('asset', function (Blueprint $table) {
+        Schema::create('assets', function (Blueprint $table) {
             $table->increments('id')->index();;
             $table->string('name',50);
-            $table->integer('category');
+            $table->integer('category')->index();
             $table->date('date')->nullable();
             $table->integer('cost')->nullable();
             $table->string('staues',20);
@@ -37,6 +37,6 @@ class CreateAssetTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('asset');
+        Schema::dropIfExists('assets');
     }
 }
