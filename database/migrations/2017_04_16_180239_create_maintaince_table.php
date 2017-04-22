@@ -13,10 +13,10 @@ class CreateMaintainceTable extends Migration
      */
     public function up()
     {
-        Schema::create('maintaince', function (Blueprint $table) {
+        Schema::create('maintainces', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('a_id');
-            $table->integer('v_id');
+            $table->integer('a_id')->index();
+            $table->integer('v_id')->index();
             $table->integer('mitems_id');
             $table->date('date');
             $table->string('status',20);
@@ -24,6 +24,7 @@ class CreateMaintainceTable extends Migration
             $table->text('remark')->nullable();
             $table->timestamps();
         });
+       // Schema::rename('maintaince','maintainces');
     }
 
     /**
@@ -33,6 +34,6 @@ class CreateMaintainceTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maintaince');
+        Schema::dropIfExists('maintainces');
     }
 }

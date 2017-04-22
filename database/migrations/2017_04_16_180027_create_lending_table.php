@@ -13,14 +13,15 @@ class CreateLendingTable extends Migration
      */
     public function up()
     {
-        Schema::create('lending', function (Blueprint $table) {
+        Schema::create('lendings', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('u_id');
-            $table->integer('a_id');
+            $table->integer('u_id')->index();
+            $table->integer('a_id')->index();
             $table->dateTime('lenttime');
             $table->dateTime('returntime')->nullable();
             $table->timestamps();
         });
+      //  Schema::rename('lending','lendings');
     }
 
     /**
@@ -30,6 +31,6 @@ class CreateLendingTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lending');
+        Schema::dropIfExists('lendings');
     }
 }

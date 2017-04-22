@@ -13,12 +13,13 @@ class CreateUserPrevilegeTable extends Migration
      */
     public function up()
     {
-        Schema::create('userPrevilege', function (Blueprint $table) {
+        Schema::create('userPrevileges', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('u_id');
-            $table->integer('p_id');
+            $table->integer('u_id')->index();
+            $table->integer('p_id')->index();
             $table->timestamps();
         });
+       // Schema::rename('userPrevilege','userPrevileges');
     }
 
     /**
@@ -28,6 +29,6 @@ class CreateUserPrevilegeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('userPrevilege');
+        Schema::dropIfExists('userPrevileges');
     }
 }

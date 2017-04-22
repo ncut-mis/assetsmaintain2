@@ -13,14 +13,15 @@ class CreateApplicationTable extends Migration
      */
     public function up()
     {
-        Schema::create('application', function (Blueprint $table) {
+        Schema::create('applications', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('u_id');
-            $table->integer('m_id');
+            $table->integer('u_id')->index();
+            $table->integer('m_id')->index();
             $table->text('problem');
             $table->date('date');
             $table->timestamps();
         });
+        //Schema::rename('application','applications');
     }
 
     /**
@@ -30,6 +31,6 @@ class CreateApplicationTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('application');
+        Schema::dropIfExists('applications');
     }
 }

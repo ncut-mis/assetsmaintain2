@@ -13,14 +13,15 @@ class CreateAnnouncementTable extends Migration
      */
     public function up()
     {
-        Schema::create('announcement', function (Blueprint $table) {
+        Schema::create('announcements', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('u_id');
+            $table->integer('u_id')->index();
             $table->string('title',50);
             $table->text('content');
             $table->dateTime('datetime');
             $table->timestamps();
         });
+        //Schema::rename('announcement','announcements');
     }
 
     /**
@@ -30,6 +31,6 @@ class CreateAnnouncementTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('announcement');
+        Schema::dropIfExists('announcements');
     }
 }
