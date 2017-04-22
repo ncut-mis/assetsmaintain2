@@ -14,18 +14,18 @@ class CreateAssetTable extends Migration
     public function up()
     {
         Schema::create('asset', function (Blueprint $table) {
-            $table->increments('id');
+            $table->increments('id')->index();;
             $table->string('name',50);
             $table->integer('category');
             $table->date('date')->nullable();
             $table->integer('cost')->nullable();
             $table->string('staues',20);
-            $table->integer('keeper');
+            $table->integer('keeper')->index();
             $table->boolean('lendable');
             $table->string('location',50);
             $table->text('remark')->nullable();
             $table->string('vendor',40);
-            $table->integer('warranty');
+            $table->integer('warranty')->index();
             $table->timestamps();
         });
     }

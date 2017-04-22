@@ -21,7 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('extension',5)->nullable;
             $table->string('position',20);
             $table->string('phone',20);
-            $table->integer('d_id');
+            $table->integer('d_id')->index();
             $table->rememberToken();
             $table->timestamps();
         });

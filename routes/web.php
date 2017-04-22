@@ -16,6 +16,15 @@ Route::get('/', function () {
 });
 
 Auth::routes();
+Route::get('login','AuthController@getLogin');
+Route::get('logout','AuthController@getLogout');
+
+
+
+/*
+Route::group('middleware'=>'auth'),function(){
+    Route::get('edit','');//編輯
+});
 
 
 Route::get('/'                   , ['as' => 'home.index' , 'uses' => 'HomeController@index']);//首頁
@@ -31,4 +40,4 @@ Route::group(['prefix' => 'admin'], function() {
     Route::get('posts/{id}/edit', ['as' => 'admin.posts.edit'  , 'uses' => 'AdminPostsController@edit']);
     Route::patch('posts/{id}'   , ['as' => 'admin.posts.update', 'uses' => 'AdminPostsController@update']);
     Route::delete('posts/{id}'  , ['as' => 'admin.posts.destroy','uses' => 'AdminPostsController@destroy']);
-});
+*/

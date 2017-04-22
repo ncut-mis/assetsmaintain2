@@ -13,14 +13,15 @@ class CreateReceiveTable extends Migration
      */
     public function up()
     {
-        Schema::create('receive', function (Blueprint $table) {
+        Schema::create('receives', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('u_id');
-            $table->integer('s_id');
+            $table->integer('u_id')->index();
+            $table->integer('s_id')->index();
             $table->dateTime('datetime');
             $table->integer('quantity');
             $table->timestamps();
         });
+     //   Schema::rename('receive','receives');
     }
 
     /**
@@ -30,6 +31,6 @@ class CreateReceiveTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('receive');
+        Schema::dropIfExists('receives');
     }
 }

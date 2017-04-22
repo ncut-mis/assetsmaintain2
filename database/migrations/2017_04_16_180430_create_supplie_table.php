@@ -13,12 +13,13 @@ class CreateSupplieTable extends Migration
      */
     public function up()
     {
-        Schema::create('supplie', function (Blueprint $table) {
+        Schema::create('supplies', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',20);
-            $table->integer('quantity');
+            $table->integer('quantity')->index();
             $table->timestamps();
         });
+        //Schema::rename('supplie','supplies');
     }
 
     /**
@@ -28,6 +29,6 @@ class CreateSupplieTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('supplie');
+        Schema::dropIfExists('supplies');
     }
 }

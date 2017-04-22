@@ -13,7 +13,7 @@ class CreateVendorTable extends Migration
      */
     public function up()
     {
-        Schema::create('vendor', function (Blueprint $table) {
+        Schema::create('vendors', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',50);
             $table->string('cantactperson',25);
@@ -24,6 +24,7 @@ class CreateVendorTable extends Migration
             $table->text('remark')->nullable();
             $table->timestamps();
         });
+       // Schema::rename('vendor','vendors');
     }
 
     /**
@@ -33,6 +34,6 @@ class CreateVendorTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('vendor');
+        Schema::dropIfExists('vendors');
     }
 }

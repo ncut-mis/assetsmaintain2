@@ -13,11 +13,12 @@ class CreatePrevilegeTable extends Migration
      */
     public function up()
     {
-        Schema::create('previlege', function (Blueprint $table) {
+        Schema::create('previleges', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',20);
             $table->timestamps();
         });
+       // Schema::rename('previlege','previleges');
     }
 
     /**
@@ -27,6 +28,6 @@ class CreatePrevilegeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('previlege');
+        Schema::dropIfExists('previleges');
     }
 }

@@ -13,12 +13,13 @@ class CreateMaintainceitemTable extends Migration
      */
     public function up()
     {
-        Schema::create('maintainceitem', function (Blueprint $table) {
+        Schema::create('maintainceitems', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name',20);
             $table->integer('amount');
             $table->timestamps();
         });
+      //  Schema::rename('maintainceitem','maintainceitems');
     }
 
     /**
@@ -28,6 +29,6 @@ class CreateMaintainceitemTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('maintainceitem');
+        Schema::dropIfExists('maintainceitems');
     }
 }
