@@ -12,15 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('test');
 });
 
 Auth::routes();
 Route::get('login','AuthController@getLogin');
 Route::get('logout','AuthController@getLogout');
 
-
-
+Route::get('assets/{asset}/MaintainceApplications/create', ['as' => 'MaintainceApplicat.create' , 'uses' => 'AssetMaintainceApplicationsController@create']);
+Route::get('assets/{asset}/MaintainceApplications/store', ['as' => 'MaintainceApplicat.store' , 'uses' => 'AssetMaintainceApplicationsController@store']);
 /*
 Route::group('middleware'=>'auth'),function(){
     Route::get('edit','');//編輯
