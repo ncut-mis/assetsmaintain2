@@ -11,6 +11,6 @@ class UsersController extends Controller
         $this ->middleware('guest',['except' => ['getLogout']]);
     }
     public function getLogin(){
-        return
+        return;
     }
 }
