@@ -8,4 +8,6 @@ class AssetMaintainceApplication extends Model
 {
     //
     protected $table ='applications';
+
+
 }
