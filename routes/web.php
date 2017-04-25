@@ -29,6 +29,11 @@ Route::post('/users'         , ['as' => 'User.store' , 'uses' => 'UsersControlle
 Route::get('/users/{id}/edit', ['as' => 'User.edit'  , 'uses' => 'UsersController@edit']);//叫出原本的資料2-1(修改)
 Route::patch('/users/{id}'   , ['as' => 'User.update', 'uses' => 'UsersController@update']);//更新資料2-2
 Route::delete('/users/{id}'  , ['as' => 'User.destroy','uses' => 'UsersController@destroy']);//刪除
+
+
+//asset路徑
+Route::get('/asset/create'   , ['as' => 'asset.create' , 'uses' => 'AssetsController@create']);
+Route::post('/asset'         , ['as' => 'asset.store'  , 'uses' => 'AssetsController@store']);
 /*
 Route::group('middleware'=>'auth'),function(){
     Route::get('edit','');//編輯
