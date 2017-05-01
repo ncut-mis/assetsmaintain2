@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 
 /*
 |--------------------------------------------------------------------------
@@ -10,18 +10,18 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-/*
+Auth::routes();
 Route::get('/', function () {
     return view('welcome');
 });
-*/
-Route::get('/' , ['as' => 'home.index' , 'uses' => 'HomeController@index']);//首頁
-Auth::routes();
+
+//Route::get('/' , ['as' => 'home.index' , 'uses' => 'HomeController@index']);//首頁
+
 
 //維修申請
-Route::get('assets/{asset}/MaintainceApplications/create', ['as' => 'MaintainceApplicat.create' , 'uses' => 'AssetMaintainceApplicationsController@create']);
-Route::get('assets/{asset}/MaintainceApplications/store', ['as' => 'MaintainceApplicat.store' , 'uses' => 'AssetMaintainceApplicationsController@store']);
-
+Route::get('/assets/{asset}/MaintainceApplications/create', ['as' => 'MaintainceApplicat.create' , 'uses' => 'AssetMaintainceApplicationsController@create']);
+Route::get('/assets/{asset}/MaintainceApplications/store', ['as' => 'MaintainceApplicat.store' , 'uses' => 'AssetMaintainceApplicationsController@store']);
+Route::get('/assets/{asset}/MaintainceApplications'          , ['as' => 'MaintainceApplicat.index' , 'uses' => 'AssetMaintainceApplicationsController@index']);
 //User路徑
 Route::get('/users'          , ['as' => 'User.index' , 'uses' => 'UsersController@index']);//列出所有使用者
 Route::get('/users/create'   , ['as' => 'User.create', 'uses' => 'UsersController@create']);//抓出新增使用者表單1-1(新增)
@@ -32,6 +32,7 @@ Route::delete('/users/{id}'  , ['as' => 'User.destroy','uses' => 'UsersControlle
 
 
 //asset路徑
+//Route::get('/asset'          , ['as' => 'asset.index' , 'uses' => 'AssetsController@index']);
 Route::get('/asset/create'   , ['as' => 'asset.create' , 'uses' => 'AssetsController@create']);
 Route::post('/asset'         , ['as' => 'asset.store'  , 'uses' => 'AssetsController@store']);
 /*

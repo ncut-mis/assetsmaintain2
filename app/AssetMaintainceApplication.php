@@ -12,5 +12,7 @@ class AssetMaintainceApplication extends Model
     protected $fillable = [
         'id', 'u_id', 'm_id','problem','date'
     ];
-    
+    public function comments(){
+        return $this ->hasMany(Assets::class);
+    }
 }
